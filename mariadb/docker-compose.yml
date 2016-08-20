@@ -1,0 +1,13 @@
+version: '2'
+services:
+  master:
+    image: bitnami/mariadb:latest
+    environment:
+      - MARIADB_ROOT_PASSWORD=dockertest
+      - MARIADB_USER=dockertest
+      - MARIADB_PASSWORD=dockertest
+      - MARIADB_DATABASE=dockertest
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb-persistence:/bitnami/mariadb
