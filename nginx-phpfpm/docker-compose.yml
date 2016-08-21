@@ -1,0 +1,15 @@
+version: '2'
+services:
+  nginx:
+    image: bitnami/nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./app/vhosts/default.conf:/bitnami/nginx/conf/vhosts/default.conf
+    links:
+      - phpfpm
+    domainname: docker.dev
+  phpfpm:
+    image: bitnami/php-fpm
+    volumes:
+      - ./app:/app
