@@ -1,2 +1,3 @@
 mariadb/mariadb-persistence
 mongodb/mongodb-persistence
+nginx-phpfpm/nginx-persistence
