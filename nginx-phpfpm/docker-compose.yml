@@ -5,7 +5,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./app/vhosts/default.conf:/bitnami/nginx/conf/vhosts/default.conf
+      - ./nginx-persistence:/bitnami/nginx
+      - ./app:/app
     links:
       - phpfpm
     domainname: docker.dev
